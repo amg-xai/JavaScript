@@ -1,0 +1,21 @@
+const isArmstrong = (num) => {
+    let original = num;
+    let sum = 0;
+    let digits = num.toString().length;
+
+    while(num > 0) {
+        let digit = num % 10;
+        sum += digit ** digits;
+        num = Math.floor(num/10);
+    }
+
+    return sum === original;
+};
+
+let n = 153;
+
+if(isArmstrong(n)) {
+    console.log(n + "is an Armstrong number");
+} else {
+    console.log(n + "is not an Armstrong number");
+}
