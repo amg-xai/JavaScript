@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusBoard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>FocusBoard</h1>
+      <button id="theme-toggle" type="button">🌙 Dark Mode</button>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input type="text" id="task-input" placeholder="What needs to be done?" required />
+      <select id="priority-select">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="filter-bar" id="filter-bar">
+      <button type="button" class="filter-btn active" data-filter="all">All</button>
+      <button type="button" class="filter-btn" data-filter="active">Active</button>
+      <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <footer class="app-footer">
+      <span id="task-counter">0 tasks remaining</span>
+      <button type="button" id="clear-completed">Clear Completed</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
