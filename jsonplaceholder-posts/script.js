@@ -11,6 +11,7 @@ let allPosts = [];
 async function fetchPosts() {
   statusMessage.textContent = '⏳ Loading posts...';
   postsGrid.innerHTML = '';
+  searchInput.value = ''; // clear old search when posts reload
 
   try {
     const response = await fetch(API_URL);
