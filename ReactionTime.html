@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Tester</title>
+
+    <link rel="stylesheet" href="ReactionTime.css">
+</head>
+
+<body id="game" onclick="handleClick()">
+
+    <h1>Reaction Time Tester</h1>
+
+    <p id="message">Click Start Game to begin!</p>
+
+    <p id="result"></p>
+
+    <button id="startButton" onclick="startGame(); event.stopPropagation()">
+        Start Game
+    </button>
+
+    <script src="ReactionTime.js"></script>
+</body>
+</html>
