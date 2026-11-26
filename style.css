@@ -1,0 +1,329 @@
+/* ===== Light Mode colors ===== */
+:root {
+  --bg-page: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --border-color: #CBD5E1;
+  --accent: #2563EB;
+
+  /* priority colors */
+  --high-border: #EF4444;
+  --high-bg: #FEE2E2;
+  --high-text: #B91C1C;
+
+  --medium-border: #F59E0B;
+  --medium-bg: #FEF3C7;
+  --medium-text: #B45309;
+
+  --low-border: #10B981;
+  --low-bg: #D1FAE5;
+  --low-text: #047857;
+
+  --white: #FFFFFF;
+}
+
+/* ===== Dark Mode colors ===== */
+body.dark-theme {
+  --bg-page: #0B1120;
+  --bg-surface: #1E293B;
+  --bg-subtle: #0F172A;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-color: #334155;
+  --accent: #3B82F6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 12px;
+  font-family: 'Inter', 'Google Sans', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ===== App card ===== */
+.app-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ===== Header ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+/* ===== Buttons (common) ===== */
+button {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#theme-toggle {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+/* ===== Form ===== */
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.task-form input,
+.task-form select {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.task-form input {
+  flex: 1;
+}
+
+.task-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.task-form button {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.task-form button:hover {
+  opacity: 0.9;
+}
+
+/* ===== Filter buttons ===== */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+/* ===== Task list ===== */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  transition: background-color 0.25s ease, color 0.25s ease, opacity 0.2s ease;
+}
+
+.task-item.priority-high {
+  border-left-color: var(--high-border);
+}
+
+.task-item.priority-medium {
+  border-left-color: var(--medium-border);
+}
+
+.task-item.priority-low {
+  border-left-color: var(--low-border);
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-left input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.task-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-primary);
+  word-break: break-word;
+  transition: color 0.25s ease, opacity 0.2s ease;
+}
+
+.edit-input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  outline: 2px solid var(--accent);
+}
+
+/* completed tasks */
+.task-item.completed {
+  opacity: 0.6;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* priority badge */
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.badge-high {
+  background-color: var(--high-bg);
+  color: var(--high-text);
+}
+
+.badge-medium {
+  background-color: var(--medium-bg);
+  color: var(--medium-text);
+}
+
+.badge-low {
+  background-color: var(--low-bg);
+  color: var(--low-text);
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 0 4px;
+}
+
+.delete-btn:hover {
+  color: var(--high-border);
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+#task-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+#clear-completed {
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+#clear-completed:hover {
+  text-decoration: underline;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 500px) {
+  .app-container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .task-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-form input,
+  .task-form select,
+  .task-form button {
+    width: 100%;
+  }
+}
