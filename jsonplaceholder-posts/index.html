@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSONPlaceholder Posts Feed</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1>📰 Explore Community Posts</h1>
+        <p>Live feed fetched from JSONPlaceholder API</p>
+      </div>
+      <!-- Search and Controls -->
+      <div class="controls">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search by title or content..." 
+        />
+        <button id="refreshBtn">🔄 Refresh Posts</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Status Indicator (Loading / Error) -->
+    <div id="statusMessage" class="status-message"></div>
+
+    <!-- Posts Grid -->
+    <div id="postsGrid" class="posts-grid"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
